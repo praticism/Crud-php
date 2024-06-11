@@ -13,9 +13,12 @@ if (isset($_POST['submit'])) {
 	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
 	$age = mysqli_real_escape_string($mysqli, $_POST['age']);
 	$email = mysqli_real_escape_string($mysqli, $_POST['email']);
+	$address = mysqli_real_escape_string($mysqli, $_POST['address']);
+	$phone = mysqli_real_escape_string($mysqli, $_POST['phone']);
+
 		
 	// Check for empty fields
-	if (empty($name) || empty($age) || empty($email)) {
+	if (empty($name) || empty($age) || empty($email) || empty($address) | empty($phone)) {
 		if (empty($name)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
@@ -28,13 +31,19 @@ if (isset($_POST['submit'])) {
 			echo "<font color='red'>Email field is empty.</font><br/>";
 		}
 		
+		if (empty($address)) {
+			echo "<font color='red'>Address field is empty.</font><br/>";
+		}
+		if (empty($phone)) {
+			echo "<font color='red'>Phone field is empty.</font><br/>";
+		}
 		// Show link to the previous page
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
 	} else { 
 		// If all the fields are filled (not empty) 
 
 		// Insert data into database
-		$result = mysqli_query($mysqli, "INSERT INTO users (`name`, `age`, `email`) VALUES ('$name', '$age', '$email')");
+		$result = mysqli_query($mysqli, "INSERT INTO users (`name`, `age`, `email`, `address`, `phone`) VALUES ('$name', '$age', '$email', '$address', '$phone')");
 		
 		// Display success message
 		echo "<p><font color='green'>Data added successfully!</p>";

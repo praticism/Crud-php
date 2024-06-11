@@ -24,6 +24,14 @@
 				<td><input type="text" name="email"></td>
 			</tr>
 			<tr> 
+				<td>Address</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+			<tr> 
+				<td>Phone no.</td>
+				<td><input type="text" name="phone"></td>
+			</tr>
+			<tr> 
 				<td></td>
 				<td><input type="submit" name="submit" value="Add"></td>
 			</tr>

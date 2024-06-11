@@ -14,6 +14,9 @@ $resultData = mysqli_fetch_assoc($result);
 $name = $resultData['name'];
 $age = $resultData['age'];
 $email = $resultData['email'];
+$address = $resultData['address'];
+$phone = $resultData['phone'];
+
 ?>
 <html>
 <head>	
@@ -39,6 +42,14 @@ $email = $resultData['email'];
 			<tr> 
 				<td>Email</td>
 				<td><input type="text" name="email" value="<?php echo $email; ?>"></td>
+			</tr>
+			<tr> 
+				<td>Addressl</td>
+				<td><input type="text" name="address" value="<?php echo $address; ?>"></td>
+			</tr>
+			<tr> 
+				<td>Phone no.</td>
+				<td><input type="text" name="phone" value="<?php echo $phone; ?>"></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $id; ?>></td>
